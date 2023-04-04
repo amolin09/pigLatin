@@ -12,8 +12,25 @@ const rl = readline.createInterface({
 
 
 const pigLatin = (word) => {
+  word = word.toLowerCase().trim()
+  let firstLetter = word[0]
+  let vowels = ['a', 'e', 'i', 'o', 'u']
+  // let newArr = word.split('')
+  if(vowels.includes(firstLetter)){
+    return word + "yay"
+  }
+  else{
+    let firstConsonants = 0
+    for(let index = 0; index < word.length; index ++){
+    if(!vowels.includes(word[index])){
+      firstConsonants++
+    }
 
-  // Your code here
+    }
+    let newWord = word.substr(firstConsonants.length, word.length -1)
+    let finalAnswer = newWord + "ay"
+    return finalAnswer
+  }
 
 }
 
