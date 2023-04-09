@@ -20,15 +20,20 @@ const pigLatin = (word) => {
     return word + "yay"
   }
   else{
-    let firstConsonants = 0
+    let consonantLength = 0
     for(let index = 0; index < word.length; index ++){
-    if(!vowels.includes(word[index])){
-      firstConsonants++
-    }
+      if(!vowels.includes(word[index])){
+        consonantLength++
+      }
+     else{
+        index = word.length + 1
+      }
 
     }
-    let newWord = word.substr(firstConsonants.length, word.length -1)
-    let finalAnswer = newWord + "ay"
+    
+    let consonantString = word.substr(0, consonantLength)
+    let cutWord = word.slice(consonantLength)
+    let finalAnswer = cutWord + consonantString + "ay"
     return finalAnswer
   }
 
