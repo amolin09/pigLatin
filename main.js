@@ -26,7 +26,7 @@ const pigLatin = (word) => {
         consonantLength++
       }
      else{
-        index = word.length + 1
+        break
       }
 
     }
